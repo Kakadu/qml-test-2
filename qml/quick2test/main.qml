@@ -10,10 +10,12 @@ Rectangle {
         anchors.fill: parent
         orientation: ListView.Vertical
         delegate: Text {
-            text: "pizda"
+            text: "1"
 
             Component.onCompleted: {
+                console.log(mainModel);
                 console.log(mainModel.roles() );
+                console.log(model);
                 console.log(model.homm);
                 console.log(homm);
             }

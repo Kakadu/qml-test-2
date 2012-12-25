@@ -7,6 +7,7 @@
 #include "minimodel.h"
 
 const int HOMMRole = Qt::UserRole + 100;
+const int WTFRole = Qt::UserRole + 101;
 
 class DataObject;
 class MainModel : public QAbstractListModel

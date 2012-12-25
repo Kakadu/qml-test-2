@@ -12,13 +12,14 @@ MainModel::MainModel(QObject *parent) :
 
     QList<DataObject*> data2;
     data2 << new DataObject("d","D") << new DataObject("e","E") << new DataObject("f","F");
-    innerData.append( new MiniModel(data2) );
+    //innerData.append( new MiniModel(data2) );
 
     QList<DataObject*> data3;
     data3 << new DataObject("g","G") << new DataObject("h","H") << new DataObject("i","I");
-    innerData.append( new MiniModel(data3) );
+    //innerData.append( new MiniModel(data3) );
 
     _roles.insert(HOMMRole, QByteArray("homm"));
+    _roles.insert(WTFRole,  QByteArray("wtf"));
 }
 
 int MainModel::rowCount ( const QModelIndex & ) const {
@@ -38,6 +39,8 @@ QVariant MainModel::data ( const QModelIndex & index, int role ) const {
     case Qt::DisplayRole: // The default display role now displays the first name as well
     case HOMMRole:
         return QVariant::fromValue(dobj);
+    case WTFRole:
+        return QVariant::fromValue(QString("wtf"));
     default:
         return QVariant();
     }
