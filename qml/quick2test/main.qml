@@ -1,46 +1,50 @@
 import QtQuick 2.0
 
 Rectangle {
-    width: 800
-    height: 360
-
+    id: root
+    width: 600
+    height: 600
+    color: "lightgrey"
     ListView {
         model: mainModel
         spacing: 5
-        anchors.fill: parent
-        orientation: ListView.Vertical
-        delegate: Text {
-            text: "1"
+        property int desiredWidth: parent.width
+        width: desiredWidth
+        orientation: ListView.Horizontal
 
-            Component.onCompleted: {
-                console.log(mainModel);
-                console.log(mainModel.roles() );
-                console.log(model);
-                console.log(model.homm);
-                console.log(homm);
+        delegate: Rectangle {
+            //width: parent.desiredWidth / mainModel.dataLen()
+            width: root.width / mainModel.dataLen() - 10
+            Component.onCompleted: console.log(width)
+            ListView {
+                id: lv1
+                ScrollBar {
+                    flickable: lv1
+                    vertical: true
+                    hideScrollBarsWhenStopped: false
+                    scrollbarWidth: 5
+                }
+
+                model: homm
+                spacing: 5
+                width: parent.width
+                height: 150
+                orientation: ListView.Vertical
+                delegate:
+                    Rectangle {
+                        radius: 5
+                        anchors.rightMargin: 5
+                        anchors.leftMargin: 5
+                        width: lv1.width
+                        height: 20
+                        color: "black"
+                        Text { text: model.name + " " + model.sort
+                            anchors.fill: parent
+                            color: "white"
+                        }
+                }
             }
         }
 
-        /*
-        delegate: ListView {
-            model: homm
-            height: 30
-
-            orientation: ListView.Horizontal
-            delegate: Text {
-                //text: name + " " + sort
-                text: "asfd"//model.name + " " + model.sort
-                width: 50
-                height: 30
-
-                Component.onCompleted: console.log("Text created")
-            }
-            Component.onCompleted: {
-                console.log("Inner ListView created");
-                //console.log(homm);
-                //console.log(homm.itemsCount());
-            }
-        }
-        */
     }
 }

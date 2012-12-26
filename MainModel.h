@@ -23,7 +23,7 @@ public:
     Q_INVOKABLE int dataLen() {
         return innerData.count();
     }
-    Q_INVOKABLE QList<QString> roles() {
+    Q_INVOKABLE QList<QString> roles()  {
         QList<QString> ans;
         foreach(QByteArray b, _roles.values() ) {
             ans << QString(b);
@@ -31,7 +31,7 @@ public:
         return ans;
     }
 
-    virtual QHash<int, QByteArray> roleNames() { return _roles; }
+    virtual QHash<int, QByteArray> roleNames() const { return _roles; }
     int rowCount ( const QModelIndex & parent  ) const;
     QVariant data ( const QModelIndex & index, int role = Qt::DisplayRole ) const;
 

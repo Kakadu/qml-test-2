@@ -18,7 +18,7 @@ public:
         _roles.insert(FirstNameRole, QByteArray("name"));
         _roles.insert(SortRole, QByteArray("sort"));
     }
-    virtual QHash<int, QByteArray> roleNames() {
+    virtual QHash<int, QByteArray> roleNames() const {
         return _roles;
     }
 

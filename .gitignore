@@ -1,3 +1,10 @@
 *.o
 moc_*.cpp
 *.user
+*.user.*
+.directory
+Makefile
+
+#executable
+quick2test
+

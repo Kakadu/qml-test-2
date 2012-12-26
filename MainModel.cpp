@@ -7,16 +7,16 @@ MainModel::MainModel(QObject *parent) :
     QAbstractListModel(parent)
 {
     QList<DataObject*> data1;
-    data1 << new DataObject("a","A") << new DataObject("c","C") << new DataObject("b","B");
+    data1 << new DataObject("aaaa","A") << new DataObject("c","C") << new DataObject("b","B");
     innerData.append( new MiniModel(data1) );
 
     QList<DataObject*> data2;
     data2 << new DataObject("d","D") << new DataObject("e","E") << new DataObject("f","F");
-    //innerData.append( new MiniModel(data2) );
+    innerData.append( new MiniModel(data2) );
 
     QList<DataObject*> data3;
     data3 << new DataObject("g","G") << new DataObject("h","H") << new DataObject("i","I");
-    //innerData.append( new MiniModel(data3) );
+    innerData.append( new MiniModel(data3) );
 
     _roles.insert(HOMMRole, QByteArray("homm"));
     _roles.insert(WTFRole,  QByteArray("wtf"));
