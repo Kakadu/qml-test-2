@@ -23,7 +23,10 @@ public:
     }
 
     Q_INVOKABLE int itemsCount() { return _items.count(); }
-    MiniModel(QList<DataObject*> lst) : MiniModel(NULL) {
+    MiniModel(QList<DataObject*> lst) {
+        _roles.insert(FirstNameRole, QByteArray("name"));
+        _roles.insert(SortRole, QByteArray("sort"));
+
         _items = lst;
     }
     int rowCount(const QModelIndex & ) const {
