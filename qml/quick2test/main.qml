@@ -8,14 +8,16 @@ Rectangle {
     ListView {
         model: mainModel
         spacing: 5
-        property int desiredWidth: parent.width
-        width: desiredWidth
+
+        width: parent.width
         orientation: ListView.Horizontal
 
         delegate: Rectangle {
             //width: parent.desiredWidth / mainModel.dataLen()
-            width: root.width / mainModel.dataLen() - 10
-            Component.onCompleted: console.log(width)
+            //width: root.width / mainModel.dataLen() - 10
+            width: 200
+
+            //Component.onCompleted: console.log(width)
             ListView {
                 id: lv1
                 ScrollBar {
