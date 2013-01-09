@@ -14,8 +14,8 @@ Rectangle {
 
         delegate: Rectangle {
             //width: parent.desiredWidth / mainModel.dataLen()
-            //width: root.width / mainModel.dataLen() - 10
-            width: 200
+            width: root.width / mainModel.dataLen() - 10
+            //width: 200
 
             //Component.onCompleted: console.log(width)
             ListView {
@@ -40,7 +40,7 @@ Rectangle {
                         width: lv1.width
                         height: 20
                         color: "black"
-                        Text { text: model.name + " " + model.sort
+                        Text { text: model.name //+ " " + model.sort
                             anchors.fill: parent
                             color: "white"
                         }
