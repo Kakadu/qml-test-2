@@ -6,5 +6,5 @@ moc_*.cpp
 Makefile
 
 #executable
-quick2test
+#quick2test
 

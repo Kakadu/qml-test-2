@@ -14,18 +14,18 @@ Rectangle {
 
         delegate: Rectangle {
             //width: parent.desiredWidth / mainModel.dataLen()
-            width: root.width / mainModel.dataLen() - 10
-            //width: 200
+            //width: root.width / mainModel.dataLen() - 10
+            width: 200
 
             //Component.onCompleted: console.log(width)
             ListView {
-                id: lv1
+                id: lv1/*
                 ScrollBar {
                     flickable: lv1
                     vertical: true
                     hideScrollBarsWhenStopped: false
                     scrollbarWidth: 5
-                }
+                }*/
 
                 model: homm
                 spacing: 5
